@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    'IBM Plex Sans Arabic', 'IBM Plex Sans Variable', system-ui, sans-serif;
+
+  --text-hero: 40px;
+  --text-hero--line-height: 48px;
+  --text-hero--letter-spacing: 0;
+  --text-hero--font-weight: 700;
+
+  --color-surface: #ffffff;
+  --color-brand: #1f0f8c;
+  --color-brand-line: #4b3bb8; /* الفواصل داخل السايدبار */
+  --color-accent: #d3d93c; /* العنصر النشط — من ملف الشعار */
+
+
+  --color-heading: #0f172a; /* العناوين الرئيسية */
+  --color-body: #475569; /* النصوص الفرعية */
+  --color-muted: #eef0f2; /* خلفية العناصر غير النشطة */
+  --color-page: #f1f5f9; /* خلفية الصفحة خلف كل المحتوى */
+}
+
+@layer base {
+
+  body {
+    background-color: var(--color-page);
+    /* التمرير يقع داخل <main> فقط — لا تتحرك الصفحة كلها */
+    overflow: hidden;
+  }
+
+  /* Tailwind 4 ألغى مؤشر اليد الافتراضي للأزرار — نعيده هنا */
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
